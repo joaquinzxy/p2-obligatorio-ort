@@ -15,6 +15,7 @@ public abstract class Ganado : IValidar
     private string raza;
     private TipoSexo sexo;
     private List<Vacunacion> listaVacunaciones;
+    private int idPotrero;
 
     protected Ganado(){}
     
@@ -35,6 +36,10 @@ public abstract class Ganado : IValidar
     {
         get => codCaravana;
         set => codCaravana = value;
+    }
+    public int IdPotrero
+    {
+        get => idPotrero;
     }
 
     public DateTime FechaNacimiento
@@ -95,5 +100,27 @@ public abstract class Ganado : IValidar
         if(peso < 0) throw new Exception("El peso no puede ser negativo");
         if(string.IsNullOrEmpty(raza)) throw new Exception("La raza no puede ser nula o vacia");
         if (string.IsNullOrEmpty(codCaravana)) throw new Exception("El codigo de caravana no puede ser nulo o vacio");
+    }
+
+    public void AsignarPotrero(Potrero potrero)
+    {
+        try
+        {
+            if (idPotrero != null) // según letra un ganado no puede cambiar de potrero
+            {
+                throw new Exception("Este ganado ya pertenece a un potrero");
+            }
+            potrero.Validar();
+            idPotrero = potrero.Id;
+
+        }catch(Exception ex)
+        {
+            throw ex;
+        }
+    }
+
+    public bool EsLibre()
+    {
+        return idPotrero != null;
     }
 }

@@ -612,25 +612,9 @@ public class Sistema
         }
     }
 
-    public bool CerrarSesion(Loguin)
+    public void CerrarSesion()
     {
-        bool salida= false
-        try
-        {
-            if (!Login)
-            {
-                throw new Exception("Error");
-            }
-            else
-            {
-                return salida = true;
-            }
-
-            return salida;
-        }catch (Exception mensaje)
-        {
-            throw mensaje;
-        }
+        empleadoLogueado = null;
     }
 
 
@@ -682,51 +666,42 @@ public class Sistema
     #endregion
 
     #region Potrero
-    public Potrero ObtenerPotreroSegunHectareas(float cantidadhectareas)
+    public Potrero ObtenerPotreroSegunHectareas(float cantidadhectareas, int capacidad)
     {
-        try { 
+
+        try {
+            List<Potrero> aux = new List<Potrero>();
             foreach (Potrero unPotrero in Potrero)
                 {
-                if (cantidadhectareas == null)
+                if (cantidadhectareas == null || capacidad== null)
                 {
                     throw new Exception("El potrero no existe");
                 }
-                if (unPotrero.CantidadHectareas == cantidadhectareas)
+                if (unPotrero.CantidadHectareas > cantidadhectareas && unPotrero.CapacidadMaxima > capacidad)
                     {
-                        return unPotrero;
+                    aux.Add(unPotrero);
                     }
                 }
             }
-        catch (Exception mesanje)
+        catch (Exception mensaje)
         {
-            throw mesanje;
+            throw mensaje;
         }
     }
-    public void AsingnarPotrero(Ganado ganado, Potrero potrero)
+    public void AsingnarPotrero(string codCaravana, int potreroId)
     {
         try
         {
-            foreach (Ganado unGanado in listaGanado)
-            {
-                if (ganado != unGanado.CodCaravana || ganado== null)
-                {
-                    break;
-                    throw new Exception("Código no válido")
-                }
-                foreach (Potrero unPotrero in potreros)
-                {
-                    if (unPotrero.Id != potrero )
-                    {
-                        break;
-                        throw new Exception("Potrero no válido")
-                    }
-                    else
-                    {
-                        potreros.Add(unGanado);
-                    }
-                }
-            }
+            Ganado ganado = BuscarGanado(codCaravana);
+            Potrero potrero = BuscarPotrero(potreroId);
+            if (potrero == null) throw new Exception("Potrero inválido");
+           
+            if (ganado == null) throw new Exception("Ganado inválido");
 
+            if (!ganado.EsLibre()) throw new Exception("Ya está asignado");
+            if (potrero.ListaGanados.Count >= potrero.CapacidadMaxima) throw new Exception("Potrero en su capacidad máxima");
+            ganado.AsignarPotrero(potrero);
+            potrero.AsginarGanado(ganado);
         }
         catch (Exception mensaje) 
         {
@@ -734,6 +709,26 @@ public class Sistema
         }
 
 
+    }
+
+    public Potrero BuscarPotrero(int id)
+    {
+        try
+        {
+            foreach (Potrero unPotrero in potreros)
+            {
+                if (id == unPotrero.Id)
+                {
+                    return unPotrero
+                }
+             
+            }
+            throw new Exception("No se encontró potrero");
+        }
+        catch(Exception mensaje)
+        {
+            throw mensaje;
+        }
     }
 
 
