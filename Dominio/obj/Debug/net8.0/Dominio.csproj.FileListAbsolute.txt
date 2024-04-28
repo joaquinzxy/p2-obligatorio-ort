@@ -1,0 +1,14 @@
+/Users/joaquin/RiderProjects/obligatorio-p2-1/Dominio/bin/Debug/net8.0/Dominio
+/Users/joaquin/RiderProjects/obligatorio-p2-1/Dominio/bin/Debug/net8.0/Dominio.deps.json
+/Users/joaquin/RiderProjects/obligatorio-p2-1/Dominio/bin/Debug/net8.0/Dominio.runtimeconfig.json
+/Users/joaquin/RiderProjects/obligatorio-p2-1/Dominio/bin/Debug/net8.0/Dominio.dll
+/Users/joaquin/RiderProjects/obligatorio-p2-1/Dominio/bin/Debug/net8.0/Dominio.pdb
+/Users/joaquin/RiderProjects/obligatorio-p2-1/Dominio/obj/Debug/net8.0/Dominio.GeneratedMSBuildEditorConfig.editorconfig
+/Users/joaquin/RiderProjects/obligatorio-p2-1/Dominio/obj/Debug/net8.0/Dominio.AssemblyInfoInputs.cache
+/Users/joaquin/RiderProjects/obligatorio-p2-1/Dominio/obj/Debug/net8.0/Dominio.AssemblyInfo.cs
+/Users/joaquin/RiderProjects/obligatorio-p2-1/Dominio/obj/Debug/net8.0/Dominio.csproj.CoreCompileInputs.cache
+/Users/joaquin/RiderProjects/obligatorio-p2-1/Dominio/obj/Debug/net8.0/Dominio.dll
+/Users/joaquin/RiderProjects/obligatorio-p2-1/Dominio/obj/Debug/net8.0/refint/Dominio.dll
+/Users/joaquin/RiderProjects/obligatorio-p2-1/Dominio/obj/Debug/net8.0/Dominio.pdb
+/Users/joaquin/RiderProjects/obligatorio-p2-1/Dominio/obj/Debug/net8.0/Dominio.genruntimeconfig.cache
+/Users/joaquin/RiderProjects/obligatorio-p2-1/Dominio/obj/Debug/net8.0/ref/Dominio.dll
