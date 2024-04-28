@@ -1,4 +1,5 @@
 using Dominio.enums;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Dominio;
 
@@ -10,7 +11,7 @@ public class Sistema
     private List<Ganado> listaGanado;
     private List<Empleado> listaEmpleados;
     private List<Tarea> listaTareas;
-
+    private List<Potrero> potreros;
     static void Main(string[] args)
     {
         Sistema sistema = new Sistema();
@@ -399,6 +400,39 @@ public class Sistema
         }
     }
 
+    public bool CerrarTarea(int id, string email)
+    {
+        bool finalizarTarea = false;
+        string minEmail= email.ToLower(email)
+        try
+        {
+            foreach (Tarea unaTarea in listaTareas)
+            {
+                if (unaTarea.Id != id || id==null)
+                {
+                    throw new Exception("Tarea no encontrada")
+                }
+                foreach (Empleado unEmpleado in listaEmpleados)
+                {
+                    if (unEmpleado.Equals != email)
+                    {
+                        throw new Exception("No existe ese empleado"); 
+                    }
+                    else
+                    {
+                        return finalizarTarea = true;
+                    }
+                }
+                    
+                }
+            return finalizarTarea;
+        }
+        catch (Exception mensaje)
+        {
+            throw mensaje
+        }
+    }
+
     #endregion
 
     #region Empleados
@@ -578,6 +612,28 @@ public class Sistema
         }
     }
 
+    public bool CerrarSesion(Loguin)
+    {
+        bool salida= false
+        try
+        {
+            if (!Login)
+            {
+                throw new Exception("Error");
+            }
+            else
+            {
+                return salida = true;
+            }
+
+            return salida;
+        }catch (Exception mensaje)
+        {
+            throw mensaje;
+        }
+    }
+
+
     public List<Peon> MostrarPeonPorCapataz(string email)
     {
         Empleado empleado = BuscarEmpleado(email);
@@ -626,6 +682,59 @@ public class Sistema
     #endregion
 
     #region Potrero
+    public Potrero ObtenerPotreroSegunHectareas(float cantidadhectareas)
+    {
+        try { 
+            foreach (Potrero unPotrero in Potrero)
+                {
+                if (cantidadhectareas == null)
+                {
+                    throw new Exception("El potrero no existe");
+                }
+                if (unPotrero.CantidadHectareas == cantidadhectareas)
+                    {
+                        return unPotrero;
+                    }
+                }
+            }
+        catch (Exception mesanje)
+        {
+            throw mesanje;
+        }
+    }
+    public void AsingnarPotrero(Ganado ganado, Potrero potrero)
+    {
+        try
+        {
+            foreach (Ganado unGanado in listaGanado)
+            {
+                if (ganado != unGanado.CodCaravana || ganado== null)
+                {
+                    break;
+                    throw new Exception("Código no válido")
+                }
+                foreach (Potrero unPotrero in potreros)
+                {
+                    if (unPotrero.Id != potrero )
+                    {
+                        break;
+                        throw new Exception("Potrero no válido")
+                    }
+                    else
+                    {
+                        potreros.Add(unGanado);
+                    }
+                }
+            }
+
+        }
+        catch (Exception mensaje) 
+        {
+            throw mensaje;
+        }
+
+
+    }
 
 
     #endregion

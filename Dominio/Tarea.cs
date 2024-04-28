@@ -18,7 +18,7 @@ namespace Dominio
         string? comentarioSobreTarea;
         DateTime fechaPactada;
         private Capataz supervisor;
-
+        string email;
 
         public int Id { get => id; }
         public Capataz Supervisor { get => supervisor; }
