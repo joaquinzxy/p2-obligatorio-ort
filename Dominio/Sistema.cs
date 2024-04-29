@@ -1,4 +1,5 @@
 using Dominio.enums;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Dominio;
 
@@ -10,7 +11,7 @@ public class Sistema
     private List<Ganado> listaGanado;
     private List<Empleado> listaEmpleados;
     private List<Tarea> listaTareas;
-
+    private List<Potrero> potreros;
     static void Main(string[] args)
     {
         Sistema sistema = new Sistema();
@@ -293,29 +294,6 @@ public class Sistema
         return null;
     }
 
-    public void AltaTarea(string descripcion, DateTime fechaEstimada, string emailCapataz)
-    {
-        try
-        {
-            Empleado capataz = BuscarEmpleado(emailCapataz);
-            if (capataz == null)
-            {
-                throw new Exception("El capataz no existe");
-            }
-
-            if (capataz.GetType() == typeof(Capataz))
-            {
-                Tarea tarea = new Tarea(descripcion, fechaEstimada, capataz as Capataz);
-                tarea.Validar();
-                listaTareas.Add(tarea);
-            }
-        }
-        catch (Exception e)
-        {
-            throw e;
-        }
-    }
-
     public void AltaTarea(string descripcion, DateTime fechaEstimada, string emailCapataz, string emailPeon)
     {
         try
@@ -337,7 +315,7 @@ public class Sistema
                 throw new Exception("El responsable no es un peon");
             }
             
-            Tarea tarea = new Tarea(descripcion, fechaEstimada, capataz as Capataz);
+            Tarea tarea = new Tarea(descripcion, fechaEstimada, capataz as Capataz, peon.Email);
             tarea.Validar();
             peon.AsignarTarea(tarea);
             listaTareas.Add(tarea);
@@ -396,6 +374,33 @@ public class Sistema
         catch (Exception e)
         {
             throw e;
+        }
+    }
+
+    public void CerrarTarea(int id, string email, string comentario)
+    {
+
+        string minEmail = email.ToLower();
+        try
+        {
+            Tarea tarea = BuscarTarea(id);
+            Empleado empleado = BuscarEmpleado(email);
+            
+            // si el empleado es capataz del responsable de la tarea, o si es el responsable, puede cerrarla
+            if (empleado.GetType() == typeof(Capataz) || empleado.Email == tarea.EmailResponsable)
+            {
+                tarea.CerrarTarea(comentario);
+            }
+            else
+            {
+                throw new Exception("No tiene permisos para cerrar la tarea");
+            }
+            
+            
+        }
+        catch (Exception mensaje)
+        {
+            throw mensaje;
         }
     }
 
@@ -578,6 +583,12 @@ public class Sistema
         }
     }
 
+    public void CerrarSesion()
+    {
+        empleadoLogueado = null;
+    }
+
+
     public List<Peon> MostrarPeonPorCapataz(string email)
     {
         Empleado empleado = BuscarEmpleado(email);
@@ -626,6 +637,73 @@ public class Sistema
     #endregion
 
     #region Potrero
+    public List<Potrero> ObtenerPotreroSegunHectareas(float cantidadhectareas, int capacidad)
+    {
+
+        try {
+            List<Potrero> aux = new List<Potrero>();
+            foreach (Potrero unPotrero in potreros)
+            {
+                if (cantidadhectareas == null || capacidad== null)
+                {
+                    throw new Exception("El potrero no existe");
+                }
+                if (unPotrero.CantidadHectareas > cantidadhectareas && unPotrero.CapacidadMaxima > capacidad)
+                {
+                    aux.Add(unPotrero);
+                }
+            }
+
+            return aux;
+        }
+        catch (Exception mensaje)
+        {
+            throw mensaje;
+        }
+    }
+    
+    public void AsingnarPotrero(string codCaravana, int potreroId)
+    {
+        try
+        {
+            Ganado ganado = BuscarGanado(codCaravana);
+            Potrero potrero = BuscarPotrero(potreroId);
+            if (potrero == null) throw new Exception("Potrero inválido");
+           
+            if (ganado == null) throw new Exception("Ganado inválido");
+
+            if (!ganado.EsLibre()) throw new Exception("Ya está asignado");
+            if (potrero.ListaGanados.Count >= potrero.CapacidadMaxima) throw new Exception("Potrero en su capacidad máxima");
+            ganado.AsignarPotrero(potrero);
+            potrero.AsginarGanado(ganado);
+        }
+        catch (Exception mensaje) 
+        {
+            throw mensaje;
+        }
+
+
+    }
+
+    public Potrero BuscarPotrero(int id)
+    {
+        try
+        {
+            foreach (Potrero unPotrero in potreros)
+            {
+                if (id == unPotrero.Id)
+                {
+                    return unPotrero;
+                }
+             
+            }
+            throw new Exception("No se encontró potrero");
+        }
+        catch(Exception mensaje)
+        {
+            throw mensaje;
+        }
+    }
 
 
     #endregion
