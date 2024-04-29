@@ -93,20 +93,11 @@ public abstract class Ganado : IValidar
         return DateTime.Now >= this.fechaNacimiento.AddMonths(3);
     }
 
-    public virtual void Validar()
-    {
-        if(costoAdquisicion < 0) throw new Exception("El costo de adquisicion no puede ser negativo");
-        if(costoAlimentacion < 0) throw new Exception("El costo de alimentacion no puede ser negativo");
-        if(peso < 0) throw new Exception("El peso no puede ser negativo");
-        if(string.IsNullOrEmpty(raza)) throw new Exception("La raza no puede ser nula o vacia");
-        if (string.IsNullOrEmpty(codCaravana)) throw new Exception("El codigo de caravana no puede ser nulo o vacio");
-    }
-
     public void AsignarPotrero(Potrero potrero)
     {
         try
         {
-            if (idPotrero != null) // según letra un ganado no puede cambiar de potrero
+            if (idPotrero != null) // segï¿½n letra un ganado no puede cambiar de potrero
             {
                 throw new Exception("Este ganado ya pertenece a un potrero");
             }
@@ -117,6 +108,15 @@ public abstract class Ganado : IValidar
         {
             throw ex;
         }
+    }
+
+    public virtual void Validar()
+    {
+        if(costoAdquisicion < 0) throw new Exception("El costo de adquisicion no puede ser negativo");
+        if(costoAlimentacion < 0) throw new Exception("El costo de alimentacion no puede ser negativo");
+        if(peso < 0) throw new Exception("El peso no puede ser negativo");
+        if(raza == null || raza == "") throw new Exception("La raza no puede ser nula o vacia");
+        if (codCaravana == null || codCaravana == "") throw new Exception("El codigo de caravana no puede ser nulo o vacio");
     }
 
     public bool EsLibre()
