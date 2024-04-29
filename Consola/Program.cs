@@ -96,18 +96,28 @@ public class Program
 
     public static void AltaDeGanadoBovino()
     {
-        Console.WriteLine("Ingrese código de caravana, fecha de nacimiento, costo de adquisición" +
-            "costo de alimentación, sexo, peso, si es hibrido, raza y alimentación ");
-        string codCaravana = PedirTexto("Ingrese código de caravana");
-        DateTime fechaNacimiento = Convert.ToDateTime(PedirTexto("Ingrese fecha de nacimiento: "));
-        float costoAdquisicion = Convert.ToSingle(PedirTexto("Ingrese costo de adquisición: "));
-        float costoAlimentacion = Convert.ToSingle(PedirTexto("Ingrese costo de alimentación: "));
-        float peso = Convert.ToSingle(PedirTexto("Ingrese peso: "));
-        string raza = PedirTexto("Ingrese raza: ");
-        sistema.AltaBovino(codCaravana,fechaNacimiento,costoAdquisicion,costoAlimentacion,TipoSexo.Macho,peso,false,raza,TipoAlimentacion.Pastura);
+        try
+        {
+            Console.WriteLine("Ingrese código de caravana, fecha de nacimiento, costo de adquisición" +
+                              "costo de alimentación, sexo, peso, si es hibrido, raza y alimentación ");
+            string codCaravana = PedirTexto("Ingrese código de caravana");
+            DateTime fechaNacimiento = Convert.ToDateTime(PedirTexto("Ingrese fecha de nacimiento: "));
+            float costoAdquisicion = Convert.ToSingle(PedirTexto("Ingrese costo de adquisición: "));
+            float costoAlimentacion = Convert.ToSingle(PedirTexto("Ingrese costo de alimentación: "));
+            float peso = Convert.ToSingle(PedirTexto("Ingrese peso: "));
+            string raza = PedirTexto("Ingrese raza: ");
+            sistema.AltaBovino(codCaravana,fechaNacimiento,costoAdquisicion,costoAlimentacion,TipoSexo.Macho,peso,false,raza,TipoAlimentacion.Pastura);
 
-        Console.WriteLine("Enter para continuar");
-        Console.ReadLine();
+            Console.WriteLine("Enter para continuar");
+            Console.ReadLine();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("Ocurrio un error al registrar bovino");
+            Console.WriteLine(e.Message);
+            Console.WriteLine("Enter para continuar");
+            Console.ReadLine();
+        }
     }
 
     static int LeerNumero()
