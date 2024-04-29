@@ -294,29 +294,6 @@ public class Sistema
         return null;
     }
 
-    public void AltaTarea(string descripcion, DateTime fechaEstimada, string emailCapataz)
-    {
-        try
-        {
-            Empleado capataz = BuscarEmpleado(emailCapataz);
-            if (capataz == null)
-            {
-                throw new Exception("El capataz no existe");
-            }
-
-            if (capataz.GetType() == typeof(Capataz))
-            {
-                Tarea tarea = new Tarea(descripcion, fechaEstimada, capataz as Capataz);
-                tarea.Validar();
-                listaTareas.Add(tarea);
-            }
-        }
-        catch (Exception e)
-        {
-            throw e;
-        }
-    }
-
     public void AltaTarea(string descripcion, DateTime fechaEstimada, string emailCapataz, string emailPeon)
     {
         try
@@ -338,7 +315,7 @@ public class Sistema
                 throw new Exception("El responsable no es un peon");
             }
             
-            Tarea tarea = new Tarea(descripcion, fechaEstimada, capataz as Capataz);
+            Tarea tarea = new Tarea(descripcion, fechaEstimada, capataz as Capataz, peon.Email);
             tarea.Validar();
             peon.AsignarTarea(tarea);
             listaTareas.Add(tarea);
@@ -400,36 +377,30 @@ public class Sistema
         }
     }
 
-    public bool CerrarTarea(int id, string email)
+    public void CerrarTarea(int id, string email, string comentario)
     {
-        bool finalizarTarea = false;
-        string minEmail= email.ToLower(email)
+
+        string minEmail = email.ToLower();
         try
         {
-            foreach (Tarea unaTarea in listaTareas)
+            Tarea tarea = BuscarTarea(id);
+            Empleado empleado = BuscarEmpleado(email);
+            
+            // si el empleado es capataz del responsable de la tarea, o si es el responsable, puede cerrarla
+            if (empleado.GetType() == typeof(Capataz) || empleado.Email == tarea.EmailResponsable)
             {
-                if (unaTarea.Id != id || id==null)
-                {
-                    throw new Exception("Tarea no encontrada")
-                }
-                foreach (Empleado unEmpleado in listaEmpleados)
-                {
-                    if (unEmpleado.Equals != email)
-                    {
-                        throw new Exception("No existe ese empleado"); 
-                    }
-                    else
-                    {
-                        return finalizarTarea = true;
-                    }
-                }
-                    
-                }
-            return finalizarTarea;
+                tarea.CerrarTarea(comentario);
+            }
+            else
+            {
+                throw new Exception("No tiene permisos para cerrar la tarea");
+            }
+            
+            
         }
         catch (Exception mensaje)
         {
-            throw mensaje
+            throw mensaje;
         }
     }
 
@@ -666,28 +637,31 @@ public class Sistema
     #endregion
 
     #region Potrero
-    public Potrero ObtenerPotreroSegunHectareas(float cantidadhectareas, int capacidad)
+    public List<Potrero> ObtenerPotreroSegunHectareas(float cantidadhectareas, int capacidad)
     {
 
         try {
             List<Potrero> aux = new List<Potrero>();
-            foreach (Potrero unPotrero in Potrero)
-                {
+            foreach (Potrero unPotrero in potreros)
+            {
                 if (cantidadhectareas == null || capacidad== null)
                 {
                     throw new Exception("El potrero no existe");
                 }
                 if (unPotrero.CantidadHectareas > cantidadhectareas && unPotrero.CapacidadMaxima > capacidad)
-                    {
+                {
                     aux.Add(unPotrero);
-                    }
                 }
             }
+
+            return aux;
+        }
         catch (Exception mensaje)
         {
             throw mensaje;
         }
     }
+    
     public void AsingnarPotrero(string codCaravana, int potreroId)
     {
         try
@@ -719,7 +693,7 @@ public class Sistema
             {
                 if (id == unPotrero.Id)
                 {
-                    return unPotrero
+                    return unPotrero;
                 }
              
             }

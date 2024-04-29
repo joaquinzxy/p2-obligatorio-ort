@@ -18,9 +18,10 @@ namespace Dominio
         string? comentarioSobreTarea;
         DateTime fechaPactada;
         private Capataz supervisor;
-        string email;
+        string emailResponsable;
 
         public int Id { get => id; }
+        public string EmailResponsable { get => emailResponsable; }
         public Capataz Supervisor { get => supervisor; }
         public string Descripcion { get => descripcion; set => descripcion = value; }
         public DateTime FinalizacionEstimada { get => finalizacionEstimada; set => finalizacionEstimada = value; }
@@ -33,7 +34,7 @@ namespace Dominio
 
         }
         
-        public Tarea(string descripcion, DateTime fechaEstimadaFin, Capataz supervisor)
+        public Tarea(string descripcion, DateTime fechaEstimadaFin, Capataz supervisor, string email)
         {
             id = secuendiaId++;
             Descripcion = descripcion;
@@ -41,9 +42,10 @@ namespace Dominio
             FinalizacionEstimada = fechaEstimadaFin;
             TareaFinalizada = false;
             this.supervisor = supervisor;
+            this.emailResponsable = email;
         }
 
-        public Tarea(string descripcion, DateTime fechaEstimadaFin, Capataz supervisor,  bool estaFinalizada, DateTime fechaFinalizacion, string comentario)
+        public Tarea(string descripcion, DateTime fechaEstimadaFin, Capataz supervisor, string email,  bool estaFinalizada, DateTime fechaFinalizacion, string comentario)
         {
             id = secuendiaId++;
             Descripcion = descripcion;
@@ -52,8 +54,17 @@ namespace Dominio
             FechaDeFinalizacion = fechaFinalizacion;
             ComentarioSobreTarea = comentario;
             this.supervisor = supervisor;
+            this.emailResponsable = email;
         }
 
+        public void CerrarTarea(string comentario)
+        {
+            if(tareaFinalizada) throw new Exception("La tarea ya esta finalizada");
+            TareaFinalizada = true;
+            ComentarioSobreTarea = comentario;
+            FechaDeFinalizacion = new DateTime();
+        }
+        
         public void Validar()
         {
 

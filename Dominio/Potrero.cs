@@ -21,7 +21,7 @@ namespace Dominio
         public string? Descripcion { get => descripcion; set => descripcion = value; }
         public float CantidadHectareas { get => cantidadHectareas; set => cantidadHectareas = value; }
         public int CapacidadMaxima { get => capacidadMaxima; set => capacidadMaxima = value; }
-        public List<Ganado> ListaGanados { get => listaGanados}
+        public List<Ganado> ListaGanados { get => listaGanados; }
 
         public Potrero(){
             
@@ -70,9 +70,11 @@ namespace Dominio
             try
             {
                 if (ListaGanados.Count >= CapacidadMaxima) throw new Exception("No es posible asignarlo");
+                listaGanados.Add(ganado);
+            } catch (Exception e)
+            {
+                throw e;
             }
-            listaGanados.Add(ganado);
-            
         }
     }
 
