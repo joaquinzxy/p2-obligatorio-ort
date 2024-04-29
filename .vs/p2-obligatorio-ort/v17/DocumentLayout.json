@@ -7,12 +7,16 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Consola\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Yasy\\Desktop\\p2-obligatorio-ort\\Dominio\\Bovino.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Dominio\\Bovino.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Yasy\\Desktop\\p2-obligatorio-ort\\Dominio\\Sistema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Dominio\\Sistema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Yasy\\Desktop\\p2-obligatorio-ort\\Dominio\\Bovino.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Dominio\\Bovino.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Yasy\\Desktop\\p2-obligatorio-ort\\Dominio\\enums\\TipoAlimentacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Dominio\\enums\\TipoAlimentacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Yasy\\Desktop\\p2-obligatorio-ort\\Dominio\\Ganado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -29,10 +33,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Yasy\\Desktop\\p2-obligatorio-ort\\Dominio\\Tarea.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Dominio\\Tarea.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Yasy\\Desktop\\p2-obligatorio-ort\\Consola\\Consola.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Consola\\Consola.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,11 +42,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 12,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Ganado.cs",
               "DocumentMoniker": "C:\\Users\\Yasy\\Desktop\\p2-obligatorio-ort\\Dominio\\Ganado.cs",
               "RelativeDocumentMoniker": "Dominio\\Ganado.cs",
@@ -55,34 +55,7 @@
               "ViewState": "AQIAAHAAAAAAAAAAAAAAAH8AAABbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-28T23:33:05.017Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Bovino.cs",
-              "DocumentMoniker": "C:\\Users\\Yasy\\Desktop\\p2-obligatorio-ort\\Dominio\\Bovino.cs",
-              "RelativeDocumentMoniker": "Dominio\\Bovino.cs",
-              "ToolTip": "C:\\Users\\Yasy\\Desktop\\p2-obligatorio-ort\\Dominio\\Bovino.cs",
-              "RelativeToolTip": "Dominio\\Bovino.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-29T02:50:51.122Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Ovino.cs",
-              "DocumentMoniker": "C:\\Users\\Yasy\\Desktop\\p2-obligatorio-ort\\Dominio\\Ovino.cs",
-              "RelativeDocumentMoniker": "Dominio\\Ovino.cs",
-              "ToolTip": "C:\\Users\\Yasy\\Desktop\\p2-obligatorio-ort\\Dominio\\Ovino.cs",
-              "RelativeToolTip": "Dominio\\Ovino.cs",
-              "ViewState": "AQIAABQAAAAAAAAAAAAAACgAAAA3AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-29T02:24:33.082Z",
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Bookmark",
@@ -97,21 +70,54 @@
               "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Consola.csproj",
-              "DocumentMoniker": "C:\\Users\\Yasy\\Desktop\\p2-obligatorio-ort\\Consola\\Consola.csproj",
-              "RelativeDocumentMoniker": "Consola\\Consola.csproj",
-              "ToolTip": "C:\\Users\\Yasy\\Desktop\\p2-obligatorio-ort\\Consola\\Consola.csproj",
-              "RelativeToolTip": "Consola\\Consola.csproj",
+              "DocumentIndex": 3,
+              "Title": "TipoAlimentacion.cs",
+              "DocumentMoniker": "C:\\Users\\Yasy\\Desktop\\p2-obligatorio-ort\\Dominio\\enums\\TipoAlimentacion.cs",
+              "RelativeDocumentMoniker": "Dominio\\enums\\TipoAlimentacion.cs",
+              "ToolTip": "C:\\Users\\Yasy\\Desktop\\p2-obligatorio-ort\\Dominio\\enums\\TipoAlimentacion.cs",
+              "RelativeToolTip": "Dominio\\enums\\TipoAlimentacion.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-04-29T01:44:00.754Z",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-29T03:56:35.324Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
+              "Title": "Bovino.cs",
+              "DocumentMoniker": "C:\\Users\\Yasy\\Desktop\\p2-obligatorio-ort\\Dominio\\Bovino.cs",
+              "RelativeDocumentMoniker": "Dominio\\Bovino.cs",
+              "ToolTip": "C:\\Users\\Yasy\\Desktop\\p2-obligatorio-ort\\Dominio\\Bovino.cs",
+              "RelativeToolTip": "Dominio\\Bovino.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAAB8AAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-29T02:50:51.122Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Ovino.cs",
+              "DocumentMoniker": "C:\\Users\\Yasy\\Desktop\\p2-obligatorio-ort\\Dominio\\Ovino.cs",
+              "RelativeDocumentMoniker": "Dominio\\Ovino.cs",
+              "ToolTip": "C:\\Users\\Yasy\\Desktop\\p2-obligatorio-ort\\Dominio\\Ovino.cs",
+              "RelativeToolTip": "Dominio\\Ovino.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAAAAACgAAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-29T02:24:33.082Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "Tarea.cs",
               "DocumentMoniker": "C:\\Users\\Yasy\\Desktop\\p2-obligatorio-ort\\Dominio\\Tarea.cs",
               "RelativeDocumentMoniker": "Dominio\\Tarea.cs",
@@ -119,12 +125,11 @@
               "RelativeToolTip": "Dominio\\Tarea.cs",
               "ViewState": "AQIAAAgAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-29T00:17:30.421Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-29T00:17:30.421Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Potrero.cs",
               "DocumentMoniker": "C:\\Users\\Yasy\\Desktop\\p2-obligatorio-ort\\Dominio\\Potrero.cs",
               "RelativeDocumentMoniker": "Dominio\\Potrero.cs",
@@ -132,18 +137,17 @@
               "RelativeToolTip": "Dominio\\Potrero.cs",
               "ViewState": "AQIAADUAAAAAAAAAAAAAAEAAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-28T23:27:23.786Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-28T23:27:23.786Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Sistema.cs",
               "DocumentMoniker": "C:\\Users\\Yasy\\Desktop\\p2-obligatorio-ort\\Dominio\\Sistema.cs",
               "RelativeDocumentMoniker": "Dominio\\Sistema.cs",
               "ToolTip": "C:\\Users\\Yasy\\Desktop\\p2-obligatorio-ort\\Dominio\\Sistema.cs",
               "RelativeToolTip": "Dominio\\Sistema.cs",
-              "ViewState": "AQIAAEsAAAAAAAAAAAAAAFsAAAAkAAAA",
+              "ViewState": "AQIAAEcAAAAAAAAAAAAAACEAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-28T23:19:04.53Z",
               "EditorCaption": ""
@@ -156,7 +160,7 @@
               "RelativeDocumentMoniker": "Consola\\Program.cs",
               "ToolTip": "C:\\Users\\Yasy\\Desktop\\p2-obligatorio-ort\\Consola\\Program.cs",
               "RelativeToolTip": "Consola\\Program.cs",
-              "ViewState": "AQIAAEYAAAAAAAAAAAAAAFUAAAAAAAAA",
+              "ViewState": "AQIAAFwAAAAAAAAAAAAAAG0AAACUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-29T01:44:07.241Z",
               "EditorCaption": ""

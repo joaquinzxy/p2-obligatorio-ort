@@ -27,7 +27,8 @@ public class Bovino : Ganado
     public override void Validar()
     {
         base.Validar();
-        Console.WriteLine(alimentacion);
-        if(alimentacion != TipoAlimentacion.Grano || alimentacion != TipoAlimentacion.Pastura) throw new Exception("El bovino debe tener una alimentacion");
+       Console.WriteLine(alimentacion);
+       //Console.WriteLine(typeof(Alimentacion));
+       if (Alimentacion == TipoAlimentacion.Grano || Alimentacion != TipoAlimentacion.Pastura) throw new Exception("El bovino debe tener una alimentacion");
     }
 }

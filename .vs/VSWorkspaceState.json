@@ -2,7 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\Consola",
-    "\\Dominio"
+    "\\Dominio",
+    "\\Dominio\\enums"
   ],
   "SelectedNode": "\\Consola\\Program.cs",
   "PreviewInSolutionExplorer": false

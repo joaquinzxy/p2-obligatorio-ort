@@ -106,7 +106,8 @@ public class Program
             float costoAlimentacion = Convert.ToSingle(PedirTexto("Ingrese costo de alimentación: "));
             float peso = Convert.ToSingle(PedirTexto("Ingrese peso: "));
             string raza = PedirTexto("Ingrese raza: ");
-            sistema.AltaBovino(codCaravana,fechaNacimiento,costoAdquisicion,costoAlimentacion,TipoSexo.Macho,peso,false,raza,TipoAlimentacion.Pastura);
+            //int tipoAlimentacion = 1;
+            sistema.AltaBovino(codCaravana,fechaNacimiento,costoAdquisicion,costoAlimentacion,TipoSexo.Macho,peso,false,raza, TipoAlimentacion.Grano);
 
             Console.WriteLine("Enter para continuar");
             Console.ReadLine();
