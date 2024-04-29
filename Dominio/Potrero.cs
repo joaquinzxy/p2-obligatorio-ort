@@ -62,7 +62,7 @@ namespace Dominio
 
         public override string ToString()
         {
-            return $" {Id} {Descripcion} {CantidadHectareas} {CapacidadMaxima}";
+            return $"Id: {Id} /n Descripción: {Descripcion} /n Cantidad de hectáreas: {CantidadHectareas}/n Capacidad máxima: {CapacidadMaxima}";
         }
 
         public void AsginarGanado(Ganado ganado)

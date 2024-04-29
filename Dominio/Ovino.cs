@@ -36,4 +36,9 @@ public class Ovino : Ganado
         base.Validar();
         if(pesoLana < 0) throw new Exception("El peso de la lana no puede ser negativo");
     }
+    public override string ToString()
+    {
+        return $"El precio establecido es {precioKgLana}";
+
+    }
 }

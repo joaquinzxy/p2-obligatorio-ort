@@ -123,4 +123,8 @@ public abstract class Ganado : IValidar
     {
         return idPotrero != null;
     }
+    public override string ToString()
+    {
+        return $"Código de caravana: {CodCaravana} /n Raza: {Raza} /n Peso: {peso} /n Sexo: {sexo}";
+    }
 }

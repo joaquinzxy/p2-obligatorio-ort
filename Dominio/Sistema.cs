@@ -34,9 +34,18 @@ public class Sistema
 
     #region Ganado
 
-    public List<Ganado> ListarGanado
+
+/*public List<Ganado> ListarGanado
     {
         get => listaGanado;
+    }*/
+
+    public List<Ganado> ListarGanado()
+    {
+        foreach (Ganado unGanado in listaGanado)
+        {
+            return unGanado;
+        }
     }
 
     public Ganado BuscarGanado(string codCaravana)
@@ -132,6 +141,7 @@ public class Sistema
         {
             throw e;
         }
+
     }
 
     public List<Vacunacion> ObtenerVacunacionesGanado(string codCaravana)
