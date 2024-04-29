@@ -1,10 +1,11 @@
 ﻿using Dominio;
+using Dominio.enums;
 
 namespace Aplicacion;
 
 public class Program
 {
-        Sistema sistema = new Sistema(); 
+        static Sistema sistema = Sistema.Instancia; 
         static void Main(string[] args)
         {
             int opcion = 0;
@@ -16,11 +17,18 @@ public class Program
                 switch (opcion)
                 {
                     case 1:
-                        ListarTodos();
+                        //use listarAnimales
+                        ListarAnimales();
                         break;
 
                     case 2:
-                        ListarEstudiantes();
+                        //use ObtenerPotreroSegunHectareas
+                        break;
+                    case 3:
+                        PrecioKiloLana();
+                        break;
+                    case 4:
+                        AltaDeGanadoBovino();
                         break;
                 }
 
@@ -39,12 +47,22 @@ public class Program
                 numero++;
             }
         }
-    static void ListarAnimales()
+    public static void ListarAnimales()
     {
+        Console.WriteLine("Listado de animales:");
         List<Ganado> lista = sistema.ListarGanado();
-        foreach (Ganado unGanado in Ganado)
+        if(lista.Count > 0)
         {
-            Console.WriteLine(unGanado.ToString());
+            foreach (Ganado unGanado in lista)
+            {
+                Console.WriteLine("=========================");
+                Console.WriteLine(unGanado.ToString());
+                Console.WriteLine("=========================");
+            }
+        }
+        else
+        {
+            Console.WriteLine("No hay animales");
         }
         Console.WriteLine("Enter para continuar");
         Console.ReadLine();
@@ -52,11 +70,13 @@ public class Program
 
 
 
-    static void ObtenerPotreroSegunHectareas(float cantidadhectareas, int capacidad)
+    public static void ObtenerPotreroSegunHectareas()
     {
         Console.WriteLine("Ingrese cantidad de hectáreas y capacidad");
+        float cantidadhectareas = Convert.ToSingle(Console.ReadLine());
+        int capacidad = Convert.ToInt32(Console.ReadLine());
         List<Potrero> lista = sistema.ObtenerPotreroSegunHectareas(cantidadhectareas,capacidad);
-        foreach (Potrero unPotrero in potreros)
+        foreach (Potrero unPotrero in lista)
         {
             Console.WriteLine(unPotrero.ToString());
         }
@@ -65,24 +85,26 @@ public class Program
     }
 
 
-    static void PrecioKiloLana(float precio)
+    public static void PrecioKiloLana()
     {
         Console.WriteLine("Ingrese el precio de la lana");
-        List<Ganado> lista = sistema.DefinirPrecioKgLana(precio);
-        foreach (Ganado unGanado in listaGanado)
-        {
-            Console.WriteLine(unGanado.ToString());
-        }
+        float precio = Convert.ToSingle(Console.ReadLine());
+        sistema.DefinirPrecioKgLana(precio);
         Console.WriteLine("Enter para continuar");
         Console.ReadLine();
     }
 
-    static void AltaDeGanadoBovino(string codCaravana, DateTime fechaNacimiento, float costoAdquisicion, float costoAlimentacion, TipoSexo sexo, float peso, bool esHibrido, string raza, TipoAlimentacion alimentacion)
+    public static void AltaDeGanadoBovino()
     {
         Console.WriteLine("Ingrese código de caravana, fecha de nacimiento, costo de adquisición" +
             "costo de alimentación, sexo, peso, si es hibrido, raza y alimentación ");
-
-        List<Ganado> lista = sistema.AltaBovino(codCaravana,fechaNacimiento,costoAdquisicion,costoAlimentacion,sexo,peso,esHibrido,raza,alimentacion);
+        string codCaravana = PedirTexto("Ingrese código de caravana");
+        DateTime fechaNacimiento = Convert.ToDateTime(PedirTexto("Ingrese fecha de nacimiento: "));
+        float costoAdquisicion = Convert.ToSingle(PedirTexto("Ingrese costo de adquisición: "));
+        float costoAlimentacion = Convert.ToSingle(PedirTexto("Ingrese costo de alimentación: "));
+        float peso = Convert.ToSingle(PedirTexto("Ingrese peso: "));
+        string raza = PedirTexto("Ingrese raza: ");
+        sistema.AltaBovino(codCaravana,fechaNacimiento,costoAdquisicion,costoAlimentacion,TipoSexo.Macho,peso,false,raza,TipoAlimentacion.Pastura);
 
         Console.WriteLine("Enter para continuar");
         Console.ReadLine();
@@ -139,5 +161,4 @@ public class Program
         Console.ReadLine();
     }
 
-    }
 }

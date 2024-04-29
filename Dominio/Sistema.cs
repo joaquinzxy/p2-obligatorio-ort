@@ -8,13 +8,12 @@ public class Sistema
     private static Sistema instancia;
     private Empleado empleadoLogueado;
     private List<Vacuna> listaVacunas;
-    private List<Ganado> listaGanado;
+    private List<Ganado> listaGanado = new List<Ganado>();
     private List<Empleado> listaEmpleados;
     private List<Tarea> listaTareas;
     private List<Potrero> potreros;
     static void Main(string[] args)
     {
-        Sistema sistema = new Sistema();
         
     }
     
@@ -42,10 +41,7 @@ public class Sistema
 
     public List<Ganado> ListarGanado()
     {
-        foreach (Ganado unGanado in listaGanado)
-        {
-            return unGanado;
-        }
+        return listaGanado;
     }
 
     public Ganado BuscarGanado(string codCaravana)

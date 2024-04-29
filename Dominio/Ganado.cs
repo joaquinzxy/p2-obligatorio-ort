@@ -113,6 +113,7 @@ public abstract class Ganado : IValidar
     public virtual void Validar()
     {
         if(costoAdquisicion < 0) throw new Exception("El costo de adquisicion no puede ser negativo");
+            
         if(costoAlimentacion < 0) throw new Exception("El costo de alimentacion no puede ser negativo");
         if(peso < 0) throw new Exception("El peso no puede ser negativo");
         if(raza == null || raza == "") throw new Exception("La raza no puede ser nula o vacia");
@@ -125,6 +126,6 @@ public abstract class Ganado : IValidar
     }
     public override string ToString()
     {
-        return $"Código de caravana: {CodCaravana} /n Raza: {Raza} /n Peso: {peso} /n Sexo: {sexo}";
+        return $"Código de caravana: {CodCaravana} \n Raza: {Raza} \n Peso: {peso} \n Sexo: {sexo}";
     }
 }
